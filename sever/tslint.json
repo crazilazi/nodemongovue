@@ -1,0 +1,27 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "max-classes-per-file": false,
+        "member-access": [true, "no-public"],
+        "no-angle-bracket-type-assertion": false,
+        "no-unused-expression": false,
+        "object-literal-shorthand": false,
+        "object-literal-sort-keys": false,
+        "only-arrow-functions": false,
+        "no-console":false,
+        "whitespace": [ // All except check-typecast
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-module",
+            "check-separator",
+            "check-rest-spread",
+            "check-type",
+            // "check-typecast"
+            "check-preblock",
+            "check-type-operator",
+            "check-preblock"
+        ]
+    }
+}
