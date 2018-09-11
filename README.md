@@ -1,5 +1,5 @@
-# nodemongomongoose
-A sample app for rest api using
+# nodemongovue
+A vue app using
 Node
 Mongodb
 Mongoose
