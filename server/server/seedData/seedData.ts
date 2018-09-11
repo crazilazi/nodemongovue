@@ -1,18 +1,20 @@
 import chalk from "chalk";
+import { Chance } from "chance";
 import { IUser } from "../interface/user";
 import { careUser } from "../models/careUser";
 
 export class SeedData {
     static async seedData(dbname: string) {
         const data: IUser[] = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 100; i++) {
+            const chance = new Chance();
             const user: IUser = {
-                firstName:  Math.random().toString(36).substring(2, 15),
-                lastName:  Math.random().toString(36).substring(2, 15),
-                age: 10 + 1,
+                firstName: chance.first(),
+                lastName: chance.last(),
+                age: chance.age({ type: "teen" }),
                 email: "",
             };
-            user.email = `${user.firstName}.${user.lastName}@oneadvanced.com`;
+            user.email = `${user.firstName}.${user.lastName.split(" ")[0]}@philip.uk`;
             data.push(user);
         }
         await careUser.insertMany(data, (err, doc) => {

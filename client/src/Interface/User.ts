@@ -4,6 +4,8 @@ export interface IUser {
     lastName: string;
     email: string;
     age: number;
+    doj: Date;
+    __v: number;
 }
 
 export class User implements IUser {
@@ -13,4 +15,22 @@ export class User implements IUser {
     lastName: string;
     email: string;
     age: number;
+    doj: Date;
+    // tslint:disable-next-line:variable-name
+    __v: number;
+}
+export interface IPaginate {
+    docs: IUser[];
+    limit: number;
+    page: number;
+    pages: number;
+    total: number;
+}
+
+export class Paginate implements IPaginate {
+    docs: IUser[];
+    limit: number;
+    page: number;
+    pages: number;
+    total: number;
 }

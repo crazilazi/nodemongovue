@@ -1,0 +1,9 @@
+{
+  "realm": "Master",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "none",
+  "resource": "CarePlanningDemo",
+  "credentials": {
+    "secret": "0afce311-1eb7-4fc9-a826-5860120967f0"
+  }
+}

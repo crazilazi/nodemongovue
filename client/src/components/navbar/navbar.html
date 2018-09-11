@@ -1,0 +1,11 @@
+<b-navbar toggleable="md" type="dark" variant="info">
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+  <b-navbar-brand href="#">Welcome back {{keycloakObj.tokenParsed.name}}</b-navbar-brand>
+  <b-collapse is-nav id="nav_collapse">
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+      <b-button size="sm" class="button" type="button" v-on:click="logOut">Logout</b-button>
+    </b-navbar-nav>
+
+  </b-collapse>
+</b-navbar>

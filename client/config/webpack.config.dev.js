@@ -22,6 +22,10 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
     test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
     loader: 'file-loader'
+    // include: [
+    //   helpers.root("/src/img"),
+    //   helpers.root("/src/fonts")
+    // ]
   },
   {
     test: /\.css$/,
@@ -53,7 +57,7 @@ webpackConfig.plugins = [...webpackConfig.plugins,
 ]
 
 webpackConfig.devServer = {
-  port: 8080,
+  port: 9098,
   host: 'localhost',
   historyApiFallback: true,
   watchOptions: {

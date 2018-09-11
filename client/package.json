@@ -30,10 +30,12 @@
     "@advanced/mosaic-styles": "^2.0.20",
     "axios": "~0.17.1",
     "bootstrap-vue": "~2.0.0-rc.1",
+    "keycloak-js": "^4.5.0",
     "vue": "~2.5.13",
     "vue-class-component": "~6.1.2",
     "vue-property-decorator": "~6.0.0",
-    "vue-router": "~3.0.1"
+    "vue-router": "~3.0.1",
+    "vuejs-datepicker": "^1.5.3"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -87,6 +89,8 @@
     "sinon": "~4.2.2",
     "standard": "~10.0.3",
     "style-loader": "~0.20.1",
+    "svg-sprite-loader": "^3.9.2",
+    "svgo-loader": "^2.2.0",
     "tslint": "~5.9.1",
     "tslint-config-standard": "~7.0.0",
     "tslint-loader": "~3.5.3",

@@ -3,8 +3,7 @@ const DefinePlugin = require('webpack/lib/DefinePlugin')
 const SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin')
 const env = require('../environment/dev.env')
 
-webpackConfig.module.rules = [
-  {
+webpackConfig.module.rules = [{
     test: /\.ts$/,
     exclude: /node_modules/,
     loader: 'awesome-typescript-loader',
@@ -21,16 +20,23 @@ webpackConfig.module.rules = [
     exclude: ['./src/index.html']
   },
   {
+    test: /\.css$/,
+    use: [
+      'style-loader',
+      'css-loader'
+    ]
+  },
+  {
     test: /\.scss$/,
     use: [{
-      loader: 'style-loader'
-    },
-    {
-      loader: 'css-loader'
-    },
-    {
-      loader: 'sass-loader'
-    }
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'sass-loader'
+      }
     ]
   },
   {

@@ -1,10 +1,32 @@
-
 <b-container class="container-fluid">
-<h1>Care Users</h1>
-<div class="list-group" v-bind:style="{'max-height': '500px', 'overflow': 'auto', 'width': '400px'}">
-  <li class="list-group-item list-group-item-action" v-for="item in users"><div class="float-left">{{item.firstName}} </div> 
-    <div class="float-right"> <a href="#"  v-bind:href="'/edit/'+ item._id">Edit</a>
-    <a href="#"  v-bind:href="'/details/'+ item._id">Details</a> </div>
-   </li>
-</div>
+  <b-row>
+    <b-col md="6" class="my-1 content">
+      <div class="card">
+        <h5 class="card-header">User List</h5>
+        <b-form-input id="searchUser" v-model="searchuser" type="text" @input="searchUserAndAppendToList" placeholder="Search user by first name"></b-form-input>
+        <div class="card-body">
+          <!-- <ul>
+            <li v-for="item in users">{{item.firstName}}</li>
+          </ul> -->
+          <b-table striped hover :items="users" :fields="fields" @sort-changed="sortingChanged">
+            <template slot="details" slot-scope="row">
+              <!-- <button class="btn btn-primary" role="button" v-on:click="gotoDetails(row.item._id)">Details</Button>  -->
+              <a class="btn btn-primary" role="button" v-bind:href="'/details/'+ row.item._id">Details</a>
+            </template>
+          </b-table>
+        </div>
+      </div>
+
+    </b-col>
+
+  </b-row>
+  <b-row>
+    <b-col md="2" class="my-1">
+      <b-form-select v-model="paginate.limit" :options="options" @input="limitChange" class="mb-3" />
+    </b-col>
+    <b-col md="4" class="my-1">
+      <b-pagination align="right" :total-rows="paginate.total" :per-page="paginate.limit" v-model="paginate.page"
+        @input="paginateChange" class="my-0" />
+    </b-col>
+  </b-row>
 </b-container>

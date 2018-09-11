@@ -6,13 +6,31 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Client App</title>
+  <style>
+    .redborder {
+      border: 1px solid red;
+    }
+
+    .datepickerwhendinlist {
+      border: none !important;
+      background: none !important;
+    }
+
+    .removereadonlybg {
+      background-color: #fff !important;
+    }
+
+  </style>
 </head>
 
 <body>
 
   <div id="app-main" class="container-fluid">
-    <!-- <navbar :inverted="false"></navbar> -->
-    <router-view>loading...</router-view>
+    <navbar :inverted="false"></navbar>
+    <!-- <router-view>loading...</router-view> <transition name="router-anim" enter-active-class="animated lightSpeedIn" leave-active-class="animated lightSpeedOut"> -->
+    <transition name="router-anim" enter-active-class="animated slideInDown">
+      <router-view />
+    </transition>
   </div>
 </body>
 
