@@ -28,30 +28,6 @@ if (process.env.ENV === "development" && module.hot) {
 }
 
 Vue.use(VueRouter);
-// console.log(!KeycloakService.keycloak.authenticated);
-// console.log(KeycloakService.keycloak);
-// if (!KeycloakService.keycloak.authenticated) {
-//   KeycloakService.init().then((authenticated) => {
-//     console.log(!KeycloakService.keycloak.authenticated);
-//     console.log(KeycloakService.keycloak);
-//     // KeycloakService.login();
-//   }).catch((error) => {
-//     console.log(error);
-//   });
-// }
-// console.log(!KeycloakService.keycloak.authenticated);
-// console.log(KeycloakService.keycloak);
-// if (!KeycloakService.keycloak.authenticated) {
-//   KeycloakService.keycloak.init({ onLoad: "login-required" })
-//     .success((authenticated) => {
-//       console.log(authenticated ? "authenticated" : "not authenticated");
-//       console.log(KeycloakService.keycloak.idTokenParsed);
-//     })
-//     .error((error) => {
-//       console.log(error);
-//     });
-// }
-
 export const createRoutes: (kcs: Keycloak.KeycloakInstance) => RouteConfig[] = (kcs: Keycloak.KeycloakInstance) => [
   {
     path: "/",
@@ -111,5 +87,5 @@ export const createRoutes: (kcs: Keycloak.KeycloakInstance) => RouteConfig[] = (
   // }
 ];
 
-export const createRouter = (keycloakservice: Keycloak.KeycloakInstance) =>
-  new VueRouter({ mode: "history", routes: createRoutes(keycloakservice) });
+export const createRouter = (keycloakObj: Keycloak.KeycloakInstance) =>
+  new VueRouter({ mode: "history", routes: createRoutes(keycloakObj) });

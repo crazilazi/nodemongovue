@@ -86,9 +86,8 @@
             <!-- <a class="btn btn-primary float-left" href="#" role="button" v-bind:href="'/'">Home</a>  -->
           </b>
           <b>
-            <a class="btn btn-primary float-right" href="#" role="button" v-if="!isEditable()" v-bind:href="'/edit/'+ user._id">Edit</a>
-            <!-- <button class="btn btn-primary float-right" role="button" v-bind:disabled="isEditable"
-              v-on:click="gotoEdit(user._id)">Edit</Button> -->
+            <!-- <a class="btn btn-primary float-right" href="#" role="button" v-if="!isEditable()" v-bind:href="'/edit/'+ user._id">Edit</a> -->
+            <button class="btn btn-primary float-right" role="button" v-if="!isEditable()" v-on:click="gotoEdit(user._id)">Edit</Button>
           </b>
         </div>
       </div>

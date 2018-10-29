@@ -10,8 +10,8 @@
           </ul> -->
           <b-table striped hover :items="users" :fields="fields" @sort-changed="sortingChanged">
             <template slot="details" slot-scope="row">
-              <!-- <button class="btn btn-primary" role="button" v-on:click="gotoDetails(row.item._id)">Details</Button>  -->
-              <a class="btn btn-primary" role="button" v-bind:href="'/details/'+ row.item._id">Details</a>
+              <button class="btn btn-primary" role="button" v-on:click="gotoDetails(row.item._id)">Details</Button>
+              <!-- <a class="btn btn-primary" role="button" v-bind:href="'/details/'+ row.item._id">Details</a> -->
             </template>
           </b-table>
         </div>

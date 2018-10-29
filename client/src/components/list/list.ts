@@ -75,7 +75,7 @@ export class ListComponent extends Vue {
   }
 
   private getDataBackFromServer(url: string) {
-    console.log({ Authorization: `Bearer ${this.keycloakObj.token.toString()}` });
+    console.log(`%c ${KeycloakService.keycloak.token}`, "background: blue; color: white");
     this.axios.get(url, { headers: { Authorization: `Bearer ${this.keycloakObj.token.toString()}` } })
       .then((response: AxiosResponse) => {
         this.paginate = response.data;
