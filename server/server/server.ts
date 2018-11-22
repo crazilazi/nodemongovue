@@ -71,6 +71,15 @@ app.get("/careuser", (req, res) => {
         res.status(400).send(err);
     });
 });
+
+// get all employee
+app.get("/allemployee", (req, res) => {
+    careUser.find().select({ firstName: 1, lastName: 1, _id: 1 }).then((careusers) => {
+        res.send(careusers);
+    }, (err) => {
+        res.status(400).send(err);
+    });
+});
 // get all user by pagination
 app.get("/careuser/:limit/:page/:sortby/:searchby", keycloak.protect(), (req, res) => {
     //  console.log(req.params);
